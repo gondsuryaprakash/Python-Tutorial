@@ -2,29 +2,35 @@ t=int(input())
 for i in range(t):
     n=int(input())
     arr=list(map(int,input().split()))
-    coin=[5,10,15]
-    hashMap={5:0,10:0,15:0}
+    count5=0
+    count10=0
+    count15=0
     flag=0
     for i in range(n):
         if arr[i]==5:
-            hashMap[arr[i]]+=1
+            count5+=1
         elif arr[i]==10:
-            hashMap[arr[i]]+=1
-            if hashMap[arr[i]-5]>=1:
-                hashMap[arr[i]-5]-=1
+            if count5>=1:
+                count5-=1
+                count10 += 1
             else:
                 flag=1
                 break
         elif arr[i]==15:
-            hashMap[arr[i]]+=1
-            if hashMap[arr[i]-5]>=1:
-                hashMap[arr[i]-5]-=1
-            elif hashMap[arr[i]-10]>=2:
-                hashMap[arr[i]-10]-=2
+            if count10>=1:
+                count10-=1
+                count15+=1
+            elif count5>=2:
+                count5-=2
+                count15+=1
             else:
                 flag=1
                 break
-    print("Yes" if flag==0 else "NO")
+    print("YES" if flag==0 else "NO")
+
+
+
+
 
 
 
