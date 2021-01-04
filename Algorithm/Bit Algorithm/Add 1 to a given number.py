@@ -7,8 +7,6 @@ def addOne(x):
         print("{}={}^{}".format(x,x,m))
         m<<1
         print("{}<<1".format(m))
-
-
     x=x^m
     print("{}={}^{}".format(x,x,m))
     return x
