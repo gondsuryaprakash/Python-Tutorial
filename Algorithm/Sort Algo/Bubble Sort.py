@@ -4,6 +4,8 @@ def bubbleSort(arr):
             if arr[j]>arr[j+1]:
                 arr[j],arr[j+1]=arr[j+1],arr[j]
 
+
+
 t=int(input())
 for i in range(t):
     n=int(input())
